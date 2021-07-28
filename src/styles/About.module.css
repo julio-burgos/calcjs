@@ -1,22 +1,22 @@
 
 
 section {
-  padding: 3em 0 1em 0;
+  padding: 4em 0 4em 0;
   align-items: center;
   display: flex ;
   flex-direction: column;
-   padding-top: 10em;
+
 
   z-index: 1;
   
 }
 
-section:first-of-type{
+.MainSection{
   background-color: rgb(80, 119, 119);
   color: white;
 }
 
-button {
+.GetStarted {
   padding:12px 34px ;
   border: none;
   border-radius: 8px;
@@ -26,26 +26,30 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.GetStarted:hover {
   color:rgb(80, 119, 119);
   background-color: white;
   box-shadow: 0 0 250px 2px #012;
 }
 
-section > h2 {
+.MainSection > h2 {
+  padding-top:1em;
   font-size: 4rem;
-  padding-bottom: 1em ;
 }
 
+.MainSection > div {
+  padding:2em;
+  font-size: 1.3rem;
+}
 
-section:last-of-type > div {
+.Features > div {
   font-size: 1.5rem;
   margin-bottom: 3em;
     padding: 8px 1em;
   flex-basis: 300px;
 }
 
-section:last-of-type{
+.Features{
   flex-direction: row;
   align-items: flex-start;
     
@@ -54,7 +58,7 @@ section:last-of-type{
       padding-top:3em;
 }
 
-section:last-of-type > div >div:first-of-type {
+.Features > div >div:first-of-type {
   font-size: 2rem;
   text-align: center;
   padding: 8px 0;
