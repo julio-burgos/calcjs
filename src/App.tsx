@@ -1,86 +1,29 @@
-import * as math from "mathjs";
-import React, { FormEventHandler, useState } from "react";
+import React from "react";
+import { Link, Route, Router, Switch } from "wouter";
 import "./App.css";
+import About from "./pages/About";
+import Home from "./pages/Home";
+
 function App() {
-  const handleSubmit: FormEventHandler = (ev) => {
-    ev.preventDefault();
-    const expr = math.parse(input);
-
-    expr.toTex();
-
-    const result = math.evaluate(input);
-    console.log(result);
-  };
-  const [input, setInput] = useState("");
   return (
     <div className="whole">
-      {" "}
       <header>
         <ul>
-          <li>Home</li>
-          <li>Doc</li>
-          <li>About</li>
+          <li>
+            <Link to="/"> Home </Link>
+          </li>
+          <li>
+            <Link to="/about"> About </Link>
+          </li>
         </ul>
-
-        <div>
-          <img
-            src="https://lh3.googleusercontent.com/ogw/ADea4I7dPbfTQjYXtHhWNa0eoljoceGahW7G6qM_rNZDNg=s32-c-mo"
-            alt=""
-          />
-          <form onSubmit={handleSubmit}>
-            <input
-              name="search"
-              id="search"
-              onChange={(e) => setInput(e.target.value)}
-              value={input}
-            />
-          </form>
-        </div>
       </header>
       <main>
-        <section>
-          <h2>Main Product</h2>
-          <div>Where Ai and health meets</div>
-          <button>Get Started</button>
-        </section>
-        <section>
-          <div>
-            <div> Title </div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-              numquam assumenda totam, temporibus nam laudantium magni rem nisi.
-              Assumenda ipsum culpa eius optio nobis illo. Velit facere ea
-              excepturi iure.
-            </div>
-          </div>
-          <div>
-            <div> Title </div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-              numquam assumenda totam, temporibus nam laudantium magni rem nisi.
-              Assumenda ipsum culpa eius optio nobis illo. Velit facere ea
-              excepturi iure.
-            </div>
-          </div>
-          <div>
-            <div> Title </div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-              numquam assumenda totam, temporibus nam laudantium magni rem nisi.
-              Assumenda ipsum culpa eius optio nobis illo. Velit facere ea
-              excepturi iure.
-            </div>
-          </div>
-          <div>
-            <div> Title </div>
-            <div>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-              numquam assumenda totam, temporibus nam laudantium magni rem nisi.
-              Assumenda ipsum culpa eius optio nobis illo. Velit facere ea
-              excepturi iure.
-            </div>
-          </div>
-        </section>
+        <Router>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </Router>
       </main>
       <footer>
         <ul>
