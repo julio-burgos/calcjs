@@ -1,12 +1,12 @@
 {
   "routes": [
     {
-      "route": "/api/*",
-      "rewrite": "https://xmelanoma.azurewebsites.net/*"
+      "route": "/api",
+      "rewrite": "https://xmelanoma.azurewebsites.net/"
     }
   ],
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/assets/*.{png,jpg,gif,css,js}", "/api/*"]
+    "exclude": ["/assets/*.{png,jpg,gif,css,js}", "/api/*","/api"]
   }
 }
