@@ -5,6 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [tsconfigPaths(), reactRefresh()],
   esbuild: {
-    jsxInject: `import React from 'react'`,
+    jsxFactory: "_jsx",
+    jsxFragment: "_jsxFragment",
+    jsxInject: `import { createElement as _jsx, Fragment as _jsxFragment } from 'react'`,
   },
 });

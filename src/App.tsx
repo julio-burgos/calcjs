@@ -1,14 +1,14 @@
+import "styles/App.css";
 import { Route, Router } from "wouter";
-import "./App.css";
 import Home from "./pages/Home";
 
 function App() {
   return (
-    <main>
-      <Router>
+    <Router>
+      <main>
         <Route path="/" component={Home} />
-      </Router>
-    </main>
+      </main>
+    </Router>
   );
 }
 

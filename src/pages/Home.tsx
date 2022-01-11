@@ -1,9 +1,11 @@
+import Error from "components/Error";
+import Result from "components/Result";
 import * as math from "mathjs";
 import { FormEventHandler, useState } from "react";
 import classes from "styles/Home.module.css";
 function Home() {
   const [input, setInput] = useState<string>("");
-  const [result, setResult] = useState<string>("");
+  const [result, setResult] = useState<string>();
   const [error, setError] = useState<any>();
   const handleSubmit: FormEventHandler = (ev) => {
     ev.preventDefault();
@@ -12,15 +14,17 @@ function Home() {
     try {
       const r = expr.compile().evaluate();
       setResult(r);
+      setError(null);
     } catch (error) {
       console.error(error);
       setError(error);
+      setResult(undefined);
     }
   };
   return (
     <div className={classes.container}>
       <div className={classes.logo}>
-        <div>⚛️ </div>
+        <img height="128px" src="assets/logo.svg"></img>
         <span>Calc</span>
         <span>JS</span>
       </div>
@@ -35,7 +39,8 @@ function Home() {
           <div className={classes.searchButton}>🔍 </div>
         </div>
       </form>
-      <div>{error?.message || result}</div>
+      {error && <Error error={error} />}
+      {result && <Result result={result} />}
     </div>
   );
 }
