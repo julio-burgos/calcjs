@@ -7,6 +7,7 @@ function App() {
     <Router>
       <main>
         <Route path="/" component={Home} />
+        <Route path="/other" component={Home} />
       </main>
     </Router>
   );
