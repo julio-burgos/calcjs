@@ -2,7 +2,7 @@
   "routes": [
     {
       "route": "/api",
-      "rewrite": "https://xmelanoma.azurewebsites.net/"
+      "redirect": "https://xmelanoma.azurewebsites.net/"
     }
   ],
 
