@@ -1,9 +1,7 @@
 {
-  "routes": [
-    {
-      "route": "/api",
-      "redirect": "https://xmelanoma.azurewebsites.net/"
-    }
-  ],
+"navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*.{png,jpg,gif,js,css}"]
+  }
 
 }
